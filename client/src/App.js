@@ -8,10 +8,27 @@ import TripShow from './containers/TripShow'
 import SignUp from './containers/SignUp'
 import LogIn from './containers/LogIn'
 
+import LocalStorage from './LocalStorage'
+
+
 class App extends Component {
   render() {
+
+    const userInfo = () => {
+      if(LocalStorage.isUserAuthenticated()){
+        return (
+          <div>
+            Welcome, {LocalStorage.getUser().name}!
+          </div>
+        )
+      }
+    }
+
     return (
       <div>
+        <div>
+          {userInfo()}
+        </div>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={SignUp} />
