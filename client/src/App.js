@@ -6,7 +6,7 @@ import Home from './components/Home'
 import Trips from './containers/Trips'
 import TripShow from './containers/TripShow'
 import SignUp from './containers/SignUp'
-import LogIn from './components/LogIn'
+import LogIn from './containers/LogIn'
 
 class App extends Component {
   render() {
