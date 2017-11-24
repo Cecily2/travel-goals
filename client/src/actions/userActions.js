@@ -1,7 +1,10 @@
 import fetch from 'isomorphic-fetch';
+import LocalStorage from '../LocalStorage'
+
 
 export function signUp(credentials) {
     return function(dispatch) {
+
         return fetch('/api/users',
             {
                 method: 'POST',
@@ -10,8 +13,8 @@ export function signUp(credentials) {
             }).then(response => response.json())
             .then(response => {
                 if(response.jwt) {
-                    localStoarge.setItem("jwt", response.jwt)
-                    localStorage.setItem("user", JSON.stringify({
+                    LocalStorage.authenticateUser(response.jwt)
+                    LocalStorage.setUserData(JSON.stringify({
                         id: response.id, email: response.email, name: response.name
                     }))
 

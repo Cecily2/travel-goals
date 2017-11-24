@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { signUp } from '../actions/userActions';
+import { connect } from 'react-redux';
+
 
 class SignUp extends Component {
 
@@ -21,12 +25,12 @@ class SignUp extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log("Submit clicked")
+        this.props.signUp(this.state)
     }
 
     render(){
         return (
-            <form class="signup" onSubmit={this.handleSubmit}>
+            <form className="signup" onSubmit={this.handleSubmit}>
                 <p>
                     Username
                     <input type="text" name="name" value={this.state.name} onChange={this.handleInput} />
@@ -48,4 +52,12 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp
+const mapStateToProps = (state) => {
+    return { user: state.user }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({signUp: signUp}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
