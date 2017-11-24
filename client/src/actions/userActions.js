@@ -14,9 +14,9 @@ export function signUp(credentials) {
             .then(response => {
                 if(response.jwt) {
                     LocalStorage.authenticateUser(response.jwt)
-                    LocalStorage.setUserData(JSON.stringify({
+                    LocalStorage.setUserData({
                         id: response.id, email: response.email, name: response.name
-                    }))
+                    })
 
                     dispatch({
                         type: 'SUCCESS',
