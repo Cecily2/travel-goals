@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post 'authenticate', to: 'authentication#authenticate'
+
   scope :api do
     resources :users, only: [:create]
     resources :trips, only: [:index, :show, :create]
