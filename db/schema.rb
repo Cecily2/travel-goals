@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20171124042947) do
 
   create_table "trips", force: :cascade do |t|
     t.string "location"
+    t.string "image"
     t.text "notes"
     t.string "date"
     t.integer "user_id"
