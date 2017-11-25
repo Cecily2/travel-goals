@@ -14,6 +14,8 @@ import { bindActionCreators } from 'redux';
 import { getTrips } from './actions/tripActions'
 import { connect } from 'react-redux'
 
+import { withRouter } from 'react-router';
+
 
 class App extends Component {
   componentDidMount(){
@@ -48,4 +50,8 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({getTrips: getTrips}, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(App)
+)
+
