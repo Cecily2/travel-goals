@@ -4,6 +4,7 @@ import { getTrips } from '../actions/tripActions'
 import { connect } from 'react-redux'
 
 import NewTrip from './NewTrip'
+import Trip from '../components/Trip'
 
 
 class TripsIndex extends Component {
@@ -17,6 +18,7 @@ class TripsIndex extends Component {
     }
 
     render(){
+        const trips = this.props.trips.map((trip) => (<Trip key={trip.id} trip={trip} />) )
         return (
             <div>
                 <div className="trips-header">
@@ -24,6 +26,9 @@ class TripsIndex extends Component {
                 </div>
                 <div className="trips-body">
                     <h2>Your Trips</h2>
+                    <div>
+                        {trips}
+                    </div>
                 </div>
             </div>
 
@@ -31,10 +36,15 @@ class TripsIndex extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        trips: state.trips
+    }
+}
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({getTrips: getTrips}, dispatch)
 }
 
 
-export default connect(null, mapDispatchToProps)(TripsIndex)
+export default connect(mapStateToProps, mapDispatchToProps)(TripsIndex)
