@@ -10,7 +10,18 @@ import LogIn from './containers/LogIn'
 import LogOut from './containers/LogOut'
 import Navbar from './containers/Navbar'
 
+import { bindActionCreators } from 'redux';
+import { getTrips } from './actions/tripActions'
+import { connect } from 'react-redux'
+
+
 class App extends Component {
+  componentDidMount(){
+    if(this.props.trips.length === 0){
+      this.props.getTrips()
+    }
+  }
+
   render() {
 
     return (
@@ -29,4 +40,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return { trips: state.trips }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({getTrips: getTrips}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
