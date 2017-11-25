@@ -1,7 +1,7 @@
 function TripReducer(state = [], action){
     switch(action.type) {
         case 'LOAD_TRIPS':
-            console.log(action.payload)
+            return state.concat(action.payload)
         default:
             return state
     }
