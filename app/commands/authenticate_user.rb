@@ -1,9 +1,10 @@
+require 'pry'
 class AuthenticateUser
     prepend SimpleCommand
 
-    def initialize(email, password)
-      @email = email
-      @password = password
+    def initialize(user)
+      @email = user[:email]
+      @password = user[:password]
     end
 
     def call
