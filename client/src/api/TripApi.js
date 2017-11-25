@@ -9,6 +9,17 @@ class TripApi {
             }).then(response => response.json())
         }
 
+        static createTrip(details) {
+            return fetch('/api/trips',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': localStorage.jwt },
+                body: JSON.stringify({trip: details})
+            }).then(response => response.json())
+        }
+
 }
 
 export default TripApi
