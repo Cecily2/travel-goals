@@ -1,20 +1,40 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { bindActionCreators } from 'redux';
+import { getTrips } from '../actions/tripActions'
+import { connect } from 'react-redux'
+
+import NewTrip from './NewTrip'
 
 
 class TripsIndex extends Component {
 
+    constructor(props) {
+        super(props)
+    }
+
+    componentWillMount(){
+        this.props.getTrips()
+    }
+
     render(){
         return (
             <div>
-
-            <h2>Trips Page</h2>
-            <p>To Do. 1. get a 'new trip' component.
-            2. render list of trips.</p>
+                <div className="trips-header">
+                    <NewTrip />
+                </div>
+                <div className="trips-body">
+                    <h2>Your Trips</h2>
+                </div>
             </div>
 
         )
     }
 }
 
-export default TripsIndex
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({getTrips: getTrips}, dispatch)
+}
+
+
+export default connect(null, mapDispatchToProps)(TripsIndex)
