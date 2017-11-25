@@ -1,22 +1,17 @@
 import fetch from 'isomorphic-fetch';
-import LocalStorage from '../LocalStorage'
+import UserApi from '../api/UserApi'
 
-
-export function signUp(credentials) {
+export function signUp(credentials, history, redirect) {
     return function(dispatch) {
-
-        return fetch('/api/users',
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({user: credentials})
-            }).then(response => response.json())
+        return UserApi.createUser(credentials)
             .then(response => {
                 if(response.jwt) {
-                    LocalStorage.authenticateUser(response.jwt)
-                    LocalStorage.setUserData({
-                        id: response.id, email: response.email, name: response.name
-                    })
+                    localStorage.setItem('jwt', response.jwt)
+                    localStorage.setItem('user', JSON.stringify({
+                        id: response.id, name: response.name, email: response.email
+                    }))
+
+                    history.push(redirect)
 
                     dispatch({
                         type: 'SUCCESS',
@@ -30,5 +25,39 @@ export function signUp(credentials) {
                 }
             })
     }
+}
 
+
+export function logIn(credentials, history, redirect) {
+    return function(dispatch) {
+        return UserApi.createSession(credentials)
+            .then(response => {
+                if(response.jwt) {
+                    localStorage.setItem('jwt', response.jwt)
+                    localStorage.setItem('user', JSON.stringify({
+                        id: response.id, name: response.name, email: response.email
+                    }))
+                    history.push(redirect)
+
+                    dispatch({
+                        type: 'SUCCESS',
+                        payload: response
+                    })
+                } else {
+                    dispatch({
+                        type: 'FAILURE',
+                        payload: response.error
+                    })
+                }
+            })
+    }
+}
+
+
+
+export function logOut() {
+    console.log("LOGGING OUT")
+    localStorage.removeItem('jwt')
+    localStorage.removeItem('user')
+    return {type: 'LOG_OUT'}
 }

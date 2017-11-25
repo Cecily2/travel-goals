@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { signUp } from '../actions/userActions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
 
 class SignUp extends Component {
@@ -25,7 +26,7 @@ class SignUp extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.signUp(this.state)
+        this.props.signUp(this.state, this.props.history, '/trips')
     }
 
     render(){
@@ -60,4 +61,6 @@ const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({signUp: signUp}, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
+export default withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(SignUp)
+)
