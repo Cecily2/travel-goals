@@ -31,6 +31,8 @@ class SignUp extends Component {
 
     render(){
         return (
+            <div className="home-background">
+            <div className="home">
             <form className="signup" onSubmit={this.handleSubmit}>
                 <p>
                     Username
@@ -49,6 +51,8 @@ class SignUp extends Component {
                 </p>
 
             </form>
+            </div>
+            </div>
         )
     }
 }

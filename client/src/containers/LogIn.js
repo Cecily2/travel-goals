@@ -4,7 +4,6 @@ import { logIn } from '../actions/userActions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
-
 class LogIn extends Component {
 
     constructor(props) {
@@ -29,6 +28,8 @@ class LogIn extends Component {
 
     render(){
         return (
+            <div className="home-background">
+            <div className="home">
             <form className="login" onSubmit={this.handleSubmit}>
                 <p>
                     Email
@@ -42,6 +43,8 @@ class LogIn extends Component {
                     <input type="submit" />
                 </p>
             </form>
+            </div>
+            </div>
         )
     }
 }
