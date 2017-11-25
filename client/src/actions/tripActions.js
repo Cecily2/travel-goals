@@ -10,8 +10,18 @@ export function getTrips() {
                         payload: response
                     })
             })
+    }
+}
 
 
-
+export function createTrip(details) {
+    return function(dispatch) {
+        return TripApi.createTrip(details)
+            .then(response => {
+                    dispatch({
+                        type: 'ADD_TRIP',
+                        payload: response
+                    })
+            })
     }
 }
