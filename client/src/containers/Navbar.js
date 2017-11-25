@@ -9,7 +9,7 @@ class Navbar extends Component {
         return (
             <div className="navbar">
                 <span>LOGO</span>
-                | {this.props.userName} |  <Link to="/logout">Logout</Link> | <Link to="/signup">Signup</Link> | <Link to="/login">Login</Link>
+                | {this.props.userName} |  <Link to="/logout">Logout</Link> | <Link to="/signup">Signup</Link> | <Link to="/login">Login</Link> | <Link to="/trips">Trips</Link>
             </div>
         )
 
