@@ -1,20 +1,36 @@
 import React, { Component } from 'react';
+
+import { connect } from 'react-redux'
+
 import { Switch, Route } from 'react-router-dom'
 
 
-class TripsIndex extends Component {
+class TripsShow extends Component {
 
     render(){
 
         return (
             <div>
-                   <h2>Trip Show...</h2>
-                   <p>To Do. 1. get trip details based on params.
-                   2. get a 'new activity' component.
-                   3. render list of activities for this trip.</p>
+            <br />
+            <br />
+            <br />
+                <h2>{this.props.trip.location}</h2>
+                Notes: {this.props.trip.notes}
+                Date: {this.props.trip.date}
             </div>
         )
     }
 }
 
-export default TripsIndex
+const mapStateToProps = (state, ownProps) => {
+    const trip = state.trips.find(trip => trip.id == ownProps.match.params.id)
+    if(trip){
+        return { trip }
+    } else {
+        return { trip: {} }
+    }
+}
+
+
+
+export default connect(mapStateToProps, null)(TripsShow)
