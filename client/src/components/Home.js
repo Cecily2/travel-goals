@@ -1,10 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <div>
-            <h2>Home Page</h2>
-            <p>To Do: figure out how to add login/signup buttons, whether to make them separate routes</p>
+        <div className="home-background">
+            <div className="home">
+                <h2>Where would you like to go?</h2>
+                <p>TripGoals is a convenient app for tracking where we want
+                to go and what we'd like to do there. To get started, login
+                or register for a new account.</p>
+                <Link to='/login' className='home-button'>Login</Link>
+                <Link to='/signup' className='home-button'>Sign Up</Link>
+            </div>
         </div>
     )
 }
