@@ -13,10 +13,6 @@ class TripsIndex extends Component {
         super(props)
     }
 
-    componentWillMount(){
-        this.props.getTrips()
-    }
-
     render(){
         const trips = this.props.trips.map((trip) => (<Trip key={trip.id} trip={trip} />) )
         return (
@@ -42,9 +38,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({getTrips: getTrips}, dispatch)
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(TripsIndex)
+export default connect(mapStateToProps, null)(TripsIndex)
