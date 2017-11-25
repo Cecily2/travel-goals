@@ -20,14 +20,17 @@ body {
 .trips-header {
   background: url(./images/lukas-neasi-65741.jpg);
   background-size: cover;
-  min-height: 275px;
+  /* min-height: 275px; */
 }
 
 .trips-form {
-  position: relative;
-  top: 100px;
   margin: 0 auto;
   width: 600px;
+  padding: 50px 0;
+}
+
+.trips-form input {
+  margin-bottom: 10px;
 }
 
 .trips-form h2 {
