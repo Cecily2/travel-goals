@@ -7,7 +7,7 @@ class Navbar extends Component {
     render(){
 
         return (
-            <div>
+            <div className="navbar">
                 <span>LOGO</span>
                 | {this.props.userName} |  <Link to="/logout">Logout</Link> | <Link to="/signup">Signup</Link> | <Link to="/login">Login</Link>
             </div>
