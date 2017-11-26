@@ -24,6 +24,13 @@ class NewActivity extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.createActivity( { ...this.state, trip_id: this.props.tripId} )
+        this.setState({
+            name: '',
+            link: '',
+            description: ''
+        })
+        this.buttonDOM.blur()
+
     }
 
     render(){
@@ -34,7 +41,7 @@ class NewActivity extends Component {
                     <input type="text" name="name" value={this.state.name} onChange={this.handleInput} placeholder="Name" />
                     <input type="text" name="link" value={this.state.link} onChange={this.handleInput} placeholder="Link" />
                     <input type="text" name="description" value={this.state.description} onChange={this.handleInput} placeholder="Description" />
-                    <input type="submit" />
+                    <input type="submit" ref={(buttonDOM) => {this.buttonDOM = buttonDOM }} />
                 </form>
             </div>
 
