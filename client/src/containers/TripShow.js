@@ -8,18 +8,22 @@ import NewActivity from './NewActivity'
 
 class TripsShow extends Component {
 
-
     render(){
+
+        const style = { backgroundImage: `url(${this.props.trip.image})` }
 
         return (
             <div>
-            <div className="trip-header">
+            <div className="trip-header" style={style}>
 
             </div>
             <div className="trips-body">
-                    <h2>{this.props.trip.location}</h2>
-                    Notes: {this.props.trip.notes}
-                    Date: {this.props.trip.date}
+                    <h2>{this.props.trip.location} <span className="trip-show-date">{this.props.trip.date}</span></h2>
+
+                    <div className="trip-notes">
+                    {this.props.trip.notes}
+                    </div>
+
 
                     <ActivityList activities={this.props.trip.activities} />
                     <NewActivity tripId={this.props.trip.id} />
