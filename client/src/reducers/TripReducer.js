@@ -5,8 +5,11 @@ function TripReducer(state = [], action){
         case 'ADD_TRIP':
             return state.concat(action.payload)
         case 'ADD_ACTIVITY':
-            console.log("in reducer")
-            return state
+            return state.map(trip => trip.id === action.payload.trip_id ?
+                { ...trip, activities: trip.activities.concat(action.payload) } :
+                trip
+            )
+
         default:
             return state
     }
