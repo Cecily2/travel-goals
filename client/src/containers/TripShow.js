@@ -2,21 +2,30 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
 
+import ActivityList from '../components/ActivityList'
 
 
 class TripsShow extends Component {
+
 
     render(){
 
         return (
             <div>
-            <br />
-            <br />
-            <br />
-                <h2>{this.props.trip.location}</h2>
-                Notes: {this.props.trip.notes}
-                Date: {this.props.trip.date}
+            <div className="trip-header">
+
             </div>
+            <div className="trips-body">
+                    <h2>{this.props.trip.location}</h2>
+                    Notes: {this.props.trip.notes}
+                    Date: {this.props.trip.date}
+
+                    <ActivityList activities={this.props.trip.activities} />
+
+              </div>
+        </div>
+
+
         )
     }
 }
