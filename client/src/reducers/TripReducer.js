@@ -4,6 +4,9 @@ function TripReducer(state = [], action){
             return state.concat(action.payload)
         case 'ADD_TRIP':
             return state.concat(action.payload)
+        case 'ADD_ACTIVITY':
+            console.log("in reducer")
+            return state
         default:
             return state
     }
