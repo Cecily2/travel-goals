@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import ActivityList from '../components/ActivityList'
+import NewActivity from './NewActivity'
 
 
 class TripsShow extends Component {
@@ -21,7 +22,7 @@ class TripsShow extends Component {
                     Date: {this.props.trip.date}
 
                     <ActivityList activities={this.props.trip.activities} />
-
+                    <NewActivity />
               </div>
         </div>
 
