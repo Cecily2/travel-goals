@@ -8,8 +8,12 @@ class Navbar extends Component {
 
         return (
             <div className="navbar">
-                <span>LOGO</span>
+                <div className="navbar-left">
+                    Travel Goals
+                </div>
+                <div className="navbar-right">
                 | {this.props.userName} |  <Link to="/logout">Logout</Link> | <Link to="/signup">Signup</Link> | <Link to="/login">Login</Link> | <Link to="/trips">Trips</Link>
+                </div>
             </div>
         )
 
