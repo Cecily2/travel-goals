@@ -7,7 +7,7 @@ const ActivityList = (props) => {
         return (
             <div>
                 <h3>Activities</h3>
-                {props.activities.map(activity => <Activity activity={activity} />)}
+                {props.activities.map((activity, key) => <Activity key={key} activity={activity} />)}
             </div>
         )
     } else {
