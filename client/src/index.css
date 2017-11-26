@@ -11,6 +11,7 @@ body {
   margin: 0;
 }
 
+
 .home-background {
   background: url(./images/ryan-wilson-5154.jpg);
   background-size: cover;
@@ -95,14 +96,83 @@ body {
   font-weight: normal;
 }
 
+.trip-show-date {
+  color: #ccc;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+
 .activity {
-  margin: 25px;
+  margin: 25px 0;
+  padding: 15px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+}
+
+.activity-link {
+  font-size: 12px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+
+}
+
+.activity h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.activity .description {
+  margin-bottom: 8px;
+}
+
+.activity-form input {
+  display: block;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+}
+
+.activity-form input:focus {
+  border: 1px solid rgb(191, 23, 110);
+  outline: none;
 }
 
 .navbar {
   position: absolute;
   top: 0;
   left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  background: rgba(255,255,255,0.2);
+  padding: 15px;
+}
+
+.navbar-left {
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.navbar-right {
+  float: right;
+}
+
+.trips-body h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.trips-body .trip-notes {
+  color: rgb(100,100,100);
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
 .home {
