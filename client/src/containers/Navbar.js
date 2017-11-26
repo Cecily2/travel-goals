@@ -6,13 +6,21 @@ class Navbar extends Component {
 
     render(){
 
+        const welcomeMessage = () => {
+            if(this.props.loggedIn){
+                return (
+                    <span><strong>Welcome, {this.props.userName}!</strong> | <Link to="/logout">Logout</Link> | <Link to="/trips">Trips</Link></span>
+                )
+            }
+        }
+
         return (
             <div className="navbar">
                 <div className="navbar-left">
                     Travel Goals
                 </div>
                 <div className="navbar-right">
-                | {this.props.userName} |  <Link to="/logout">Logout</Link> | <Link to="/signup">Signup</Link> | <Link to="/login">Login</Link> | <Link to="/trips">Trips</Link>
+                {welcomeMessage()}
                 </div>
             </div>
         )
@@ -21,7 +29,6 @@ class Navbar extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-    console.log("MAPPIN")
     return {
         loggedIn: state.user.session,
         userName: state.user.name
