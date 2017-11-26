@@ -1,9 +1,9 @@
 import fetch from 'isomorphic-fetch';
 import ActivityApi from '../api/ActivityApi'
-import TripApi from '../api/TripApi'
 
 
 export function createActivity(details) {
+    console.log(details)
     return function(dispatch) {
         return ActivityApi.createActivity(details)
             .then(response => {
