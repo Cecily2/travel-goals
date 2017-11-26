@@ -11,7 +11,7 @@ class NewActivity extends Component {
             name: '',
             link: '',
             description: ''
-        }
+            }
     }
 
     handleInput = (event) => {
@@ -23,7 +23,7 @@ class NewActivity extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.createActivity(this.state)
+        this.props.createActivity( { ...this.state, trip_id: this.props.tripId} )
     }
 
     render(){
@@ -32,7 +32,7 @@ class NewActivity extends Component {
                 <h2>Add New Activity:</h2>
                 <input type="text" name="name" value={this.state.name} onChange={this.handleInput} placeholder="Name" />
                 <input type="text" name="link" value={this.state.link} onChange={this.handleInput} placeholder="Link" />
-                <input type="text" name="descriptino" value={this.state.description} onChange={this.handleInput} placeholder="Description" />
+                <input type="text" name="description" value={this.state.description} onChange={this.handleInput} placeholder="Description" />
                 <input type="submit" />
             </form>
 
