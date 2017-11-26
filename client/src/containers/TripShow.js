@@ -22,7 +22,7 @@ class TripsShow extends Component {
                     Date: {this.props.trip.date}
 
                     <ActivityList activities={this.props.trip.activities} />
-                    <NewActivity />
+                    <NewActivity tripId={this.props.trip.id} />
               </div>
         </div>
 
