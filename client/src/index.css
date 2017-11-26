@@ -14,13 +14,22 @@ body {
 .home-background {
   background: url(./images/ryan-wilson-5154.jpg);
   background-size: cover;
+  background-position: center;
   min-height: 100vh;
 }
 
 .trips-header {
   background: url(./images/lukas-neasi-65741.jpg);
   background-size: cover;
+  background-position: center;
   /* min-height: 275px; */
+}
+
+.trip-header {
+  background: url(./images/christopher-burns-194367.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 275px;
 }
 
 .trips-form {
@@ -28,6 +37,7 @@ body {
   width: 600px;
   padding: 50px 0;
 }
+
 
 .trips-form input {
   margin-bottom: 10px;
@@ -83,6 +93,10 @@ body {
 .trip-date {
   color: #ccc;
   font-weight: normal;
+}
+
+.activity {
+  margin: 25px;
 }
 
 .navbar {
