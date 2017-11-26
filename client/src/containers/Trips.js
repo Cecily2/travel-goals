@@ -14,7 +14,9 @@ class TripsIndex extends Component {
     }
 
     render(){
-        const trips = this.props.trips.map((trip) => (<Trip key={trip.id} trip={trip} />) )
+        const trips = this.props.trips
+            .sort((a, b) => b.id - a.id)
+            .map((trip) => (<Trip key={trip.id} trip={trip} />) )
         return (
             <div>
                 <div className="trips-header">
