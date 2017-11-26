@@ -49,6 +49,7 @@ GEM
     ffi (1.9.18)
     foreman (0.82.0)
       thor (~> 0.19.1)
+    geocoder (1.4.4)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.1)
@@ -134,6 +135,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   foreman (~> 0.82.0)
+  geocoder
   jwt
   listen (>= 3.0.5, < 3.2)
   pry
