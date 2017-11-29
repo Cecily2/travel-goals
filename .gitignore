@@ -21,3 +21,5 @@
 
 NOTES.md
 client/src/images/*
+
+client/src/googleMapsKey.js
