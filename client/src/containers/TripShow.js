@@ -5,29 +5,60 @@ import { connect } from 'react-redux'
 import ActivityList from '../components/ActivityList'
 import NewActivity from './NewActivity'
 
+import ReactGoogleMapLoader from "react-google-maps-loader"
+import ReactGoogleMap from "react-google-map"
+import GoogleMapsKey from "../googleMapsKey.js"
+
 
 class TripsShow extends Component {
 
     render(){
 
         const style = { backgroundImage: `url(${this.props.trip.image})` }
+        const mapCoordinates = [{
+                title: this.props.trip.location,
+                position: {
+                    lat: this.props.trip.latitude,
+                    lng: this.props.trip.longitude
+                }
+            }]
+
 
         return (
-            <div>
+        <div>
             <div className="trip-header" style={style}>
 
             </div>
+
             <div className="trips-body">
                     <h2>{this.props.trip.location} <span className="trip-show-date">{this.props.trip.date}</span></h2>
-
                     <div className="trip-notes">
                     {this.props.trip.notes}
                     </div>
-
-
                     <ActivityList activities={this.props.trip.activities} />
                     <NewActivity tripId={this.props.trip.id} />
-              </div>
+
+                    <ReactGoogleMapLoader
+                    params={{
+                        key: GoogleMapsKey(),
+                        libraries: "places,geometry",
+                    }}
+                    render={googleMaps =>
+                        googleMaps && (
+                        <div className="trip-show-map">
+                                <ReactGoogleMap
+                                googleMaps={googleMaps}
+                                autoFitBounds={false}
+                                coordinates={mapCoordinates}
+                                center={mapCoordinates[0].position}
+                                zoom={4}
+
+                                />
+                        </div>
+                        )}
+                     />
+
+            </div>
         </div>
 
 
