@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes');
 @import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
 @import url('https://fonts.googleapis.com/css?family=Rancho');
-@import url('https://fonts.googleapis.com/css?family=Cabin');
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script');
 
 
 /* body text */
@@ -21,9 +23,16 @@ body {
   margin: 0;
 }
 
+h2 {
+  font-family: 'Oleo Script', Helvetica, sans-serif;
+  font-weight: normal;
+  color: #2b2b2b;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
 h2, h3, h4  {
-  font-family: "Cabin";
-  font-weight: bold;
+  font-family: "Oleo Script";
+  font-weight: normal;
 }
 
 
@@ -75,17 +84,23 @@ h2, h3, h4  {
 }
 
 .trips-body {
+  box-sizing: border-box;
   margin: 0 auto;
-  width: 600px;
-  padding: 25px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
 }
+
+
+
+
 
 .trip-item {
   position: relative;
   float: left;
-  width: 45%;
+  width: 100%;
+  margin: 15px 0;
   height: 200px;
-  margin: 2%;
   overflow: hidden;
   background: #000;
 }
@@ -115,7 +130,7 @@ h2, h3, h4  {
 }
 
 .trip-item h3 {
-  font-size: 30px;
+  font-size: 40px;
   color: #fff;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7), 1px 1px 10px rgba(0,0,0,0.1);
 }
@@ -221,7 +236,7 @@ h2, h3, h4  {
 }
 
 .trips-body h2 {
-  font-size: 40px;
+  font-size: 50px;
   margin-bottom: 15px;
 }
 
@@ -251,4 +266,64 @@ h2, h3, h4  {
 
 p {
   margin: 10px 0;
+}
+
+.map-item div {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.map-item h3 {
+  font-size: 25px;
+}
+
+.map-page {
+  background: url(./images/ryan-wilson-5154.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.map-container {
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  height: 400px;
+  width: 100vw;
+}
+
+.trip-show-map {
+  width: 300px;
+  height: 300px;
+}
+
+@media (min-width: 500px) {
+  .map-container {
+    margin: 0 auto;
+    position: relative;
+    top: 10vh;
+    height: 80vh;
+    width: 80vw;
+    border: 3px solid #fff;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+  }
+
+  .trip-item {
+    width: 46%;
+    height: 200px;
+    margin: 2%;
+  }
+}
+
+
+@media (min-width: 900px) {
+  .trips-body {
+    padding: 30px;
+  }
+
+  .trip-item {
+    width: 31%;
+    height: 200px;
+    margin: 1.1%;
+  }
 }
