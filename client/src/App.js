@@ -9,6 +9,7 @@ import SignUp from './containers/SignUp'
 import LogIn from './containers/LogIn'
 import LogOut from './containers/LogOut'
 import Navbar from './containers/Navbar'
+import MapContainer from './containers/Map'
 
 import { bindActionCreators } from 'redux';
 import { getTrips } from './actions/tripActions'
@@ -36,6 +37,7 @@ class App extends Component {
           <Route exact path="/logout" component={LogOut} />
           <Route exact path="/trips" component={Trips} />
           <Route path="/trips/:id" component={TripShow} />
+          <Route exact path="/map" render={(props) => (<MapContainer {...props} trips={this.props.trips} /> )} />
         </Switch>
       </div>
     );
