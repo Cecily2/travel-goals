@@ -11,12 +11,10 @@ const Trip = (props) => {
         }
     }
 
-    return (
-        <div className="trip-item">
-        <div className="trip-image">
-            <img src={props.trip.image} alt={props.trip.location} />
-        </div>
+    const style = { backgroundImage: `url(${props.trip.image})` }
 
+    return (
+        <div className="trip-item" style={style}>
             <div className="trip-info">
                 <h3>{props.trip.location} <span className="trip-date">{props.trip.date}</span></h3>
 
