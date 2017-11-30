@@ -12,7 +12,7 @@ const ActivityList = (props) => {
         )
     } else {
         return (
-            <div>No activities</div>
+            <div></div>
         )
     }
 }

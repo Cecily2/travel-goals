@@ -37,7 +37,7 @@ class NewActivity extends Component {
         return (
             <div className="activity-form">
                 <form onSubmit={this.handleSubmit}>
-                    <h3>Add New Activity:</h3>
+                    <h3>Add New Activity</h3>
                     <input type="text" name="name" value={this.state.name} onChange={this.handleInput} placeholder="Name" />
                     <input type="text" name="link" value={this.state.link} onChange={this.handleInput} placeholder="Link" />
                     <input type="text" name="description" value={this.state.description} onChange={this.handleInput} placeholder="Description" />

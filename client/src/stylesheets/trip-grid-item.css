@@ -38,7 +38,8 @@
     font-size: 40px;
     color: #fff;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7), 1px 1px 10px rgba(0,0,0,0.1);
-  }
+    margin-bottom: -5px;
+}
 
 
   .activity-count {
@@ -54,10 +55,11 @@
   }
 
   .trip-date {
+    font-family: "Amatic SC";
     color: #fff;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7), 1px 1px 10px rgba(0,0,0,0.1);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 5px;
   }
 

@@ -1,15 +1,22 @@
 .activity {
-    margin: 25px 0;
+    margin: 5px 0;
     padding: 15px;
-    box-shadow: 1px 1px 5px rgba(81, 56, 40, 0.3);
   }
 
+ .activity img {
+     width: 60px;
+     float: left;
+     margin-left: -25px;
+ }
   .activity-link {
     font-size: 12px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
+  }
 
+  .activity-content {
+      margin: 5px 0 0 50px;
   }
 
   .activity h4 {
@@ -19,4 +26,8 @@
 
   .activity .description {
     margin-bottom: 8px;
+  }
+
+  .activity-form {
+      max-width: 350px;
   }

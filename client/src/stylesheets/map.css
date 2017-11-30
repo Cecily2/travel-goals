@@ -4,8 +4,13 @@
     font-size: 14px;
   }
 
+  .map-item a {
+      text-decoration: none;
+  }
+
   .map-item h3 {
     font-size: 25px;
+    margin-bottom: 0;
   }
 
   .map-page {
@@ -22,6 +27,7 @@
     height: 400px;
     width: 100vw;
   }
+
 
 
 @media (min-width: 500px) {

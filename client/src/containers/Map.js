@@ -21,11 +21,11 @@ export default class MapContainer extends React.Component {
                                   const infoWindow = new googleMaps.InfoWindow({
                                       content: `
                                         <div class="map-item">
-                                          <a href="/trips/${trip.id}"><h3>${trip.location}<h3></a>
-                                          <div>
+                                          <h3><a href="/trips/${trip.id}">${trip.location}</a></h3>
+                                          <div class="map-date">
                                             <strong>${trip.date}</strong>
                                           </div>
-                                          <div>
+                                          <div class="map-activties">
                                             ${trip.activities.length} ${trip.activities.length === 1 ? "activity" : "activities"}
                                           </div>
                                         </div>

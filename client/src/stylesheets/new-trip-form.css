@@ -1,15 +1,17 @@
   .trips-form {
     margin: 0 auto;
-    width: 600px;
-    padding: 50px 0;
+    width: 500px;
+    padding: 15px 0;
   }
 
   .trips-form h2 {
-    font-size: 35px;
-    color: #fff;
-    text-shadow: 1px 1px 10px #000;
-    margin-bottom: 20px;
-  }
+    font-family: "Amatic SC";
+    letter-spacing: -1px;
+    font-size: 40px;
+    color: rgb(93, 82, 75);
+    text-shadow: none;
+    margin: 50px 0 10px 0;
+}
 
 input[type=radio] {
     display:none;

@@ -6,10 +6,13 @@
 
 
 .trip-show-date {
+    font-family: "Amatic SC";
+
     color: #ccc;
-    font-weight: normal;
-    font-size: 25px;
+    font-weight: bold;
+    font-size: 35px;
     text-shadow: none;
+    margin-left: 10px;
   }
 
   .trip-show-map {
