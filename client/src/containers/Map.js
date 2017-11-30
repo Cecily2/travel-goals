@@ -2,6 +2,7 @@ import React from 'react'
 import ReactGoogleMapLoader from "react-google-maps-loader"
 import ReactGoogleMap from "react-google-map"
 import GoogleMapsKey from "../googleMapsKey.js"
+import '../stylesheets/map.css';
 
 export default class MapContainer extends React.Component {
 

@@ -1,0 +1,38 @@
+.activity {
+    margin: 25px 0;
+    padding: 15px;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+  }
+
+  .activity-link {
+    font-size: 12px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+
+  }
+
+  .activity h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .activity .description {
+    margin-bottom: 8px;
+  }
+
+  .activity-form input {
+    display: block;
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+  }
+
+  .activity-form input:focus {
+    border: 1px solid rgb(191, 23, 110);
+    outline: none;
+  }

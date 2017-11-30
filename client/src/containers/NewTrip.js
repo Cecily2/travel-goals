@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createTrip } from '../actions/tripActions'
 import UnsplashApi from '../api/UnsplashApi'
+import '../stylesheets/new-trip-form.css';
 
 class NewTrip extends Component {
 

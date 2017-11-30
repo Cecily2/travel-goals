@@ -1,0 +1,37 @@
+
+.map-item div {
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+
+  .map-item h3 {
+    font-size: 25px;
+  }
+
+  .map-page {
+    background: url(../images/ryan-wilson-5154.jpg);
+    background-size: cover;
+    background-position: top;
+    min-height: 100vh;
+  }
+
+  .map-container {
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+    height: 400px;
+    width: 100vw;
+  }
+
+
+@media (min-width: 500px) {
+    .map-container {
+      margin: 0 auto;
+      position: relative;
+      top: 10vh;
+      height: 80vh;
+      width: 80vw;
+      border: 3px solid #fff;
+      box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+    }
+}

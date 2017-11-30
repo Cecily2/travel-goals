@@ -1,0 +1,54 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background: rgba(255,255,255,0.4);
+    padding: 12px;
+  }
+
+  .navbar-left {
+    font-family: "Oleo Script";
+    float: left;
+    font-size: 22px;
+    color: #000;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+
+  }
+
+  .navbar-right {
+    margin: 5px 0;
+    font-size: 15px;
+    float: right;
+    color: #333;
+    letter-spacing: -0.5px;
+  }
+
+  .navbar-right a, .navbar-right a:active, .navbar-right a:visited {
+    text-decoration: none;
+    color: #000;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+  }
+
+  .navbar-right a:hover {
+    color: rgb(40, 35, 35);
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+
+  }
+
+  .user-welcome {
+    display: none;
+  }
+
+  .nav-links {
+    word-spacing: 5px;
+  }
+
+  @media (min-width: 500px) {
+    .user-welcome {
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }

@@ -9,6 +9,9 @@ import ReactGoogleMapLoader from "react-google-maps-loader"
 import ReactGoogleMap from "react-google-map"
 import GoogleMapsKey from "../googleMapsKey.js"
 
+import '../stylesheets/trip-page.css';
+import '../stylesheets/activity.css';
+
 
 class TripsShow extends Component {
 
