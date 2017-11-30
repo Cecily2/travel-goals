@@ -9,7 +9,10 @@ class Navbar extends Component {
         const welcomeMessage = () => {
             if(this.props.loggedIn){
                 return (
-                    <span><strong>Welcome, {this.props.userName}!</strong> | <Link to="/logout">Logout</Link> | <Link to="/trips">Trips</Link> | <Link to="/map">Map</Link> </span>
+                    <span>
+                        <span className="user-welcome">Welcome, {this.props.userName}! &nbsp; | </span>
+                        <span className="nav-links"><Link to="/trips">Trips</Link> | <Link to="/map">Map</Link> | <Link to="/logout">Logout</Link></span>
+                    </span>
                 )
             }
         }
