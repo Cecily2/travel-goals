@@ -11,6 +11,44 @@ body {
   font-family: sans-serif;
 }
 
+a, a:active, a:visited {
+  color: rgb(98, 68, 53);
+}
+
+a:hover {
+  color: rgb(149, 113, 95);
+}
+
+/* Input fields */
+
+  input, textarea {
+    display: block;
+    margin: 12px 0;
+    font-size: 15px;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 5px rgba(81, 56, 40, 0.3);
+    border-radius: 3px;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border: 1px solid rgb(203, 177, 163);
+  }
+
+  input[type=submit]{
+    width: 100px;
+    background: linear-gradient(#624b3b, #2b2b2b);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+  }
+
+  input[type=submit]:hover{
+    background: linear-gradient(#886752, #424242);
+  }
+
 h2 {
   font-family: 'Oleo Script', Helvetica, sans-serif;
   font-weight: normal;
@@ -24,7 +62,6 @@ h2 {
   background: url(../images/ryan-wilson-5154.jpg);
   background-size: cover;
   background-position: center;
-  /* min-height: 275px; */
 }
 
 .trips-body {

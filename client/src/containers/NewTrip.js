@@ -114,7 +114,7 @@ class NewTrip extends Component {
 
                 <div className={extraFieldsClass()}>
                     <input type="text" name="date" value={this.state.date} onChange={this.handleInput} placeholder="Approximate date (optional)" />
-                    <input type="text" name="notes" value={this.state.notes} onChange={this.handleInput} placeholder="Any other notes" />
+                    <textarea type="text" name="notes" value={this.state.notes} onChange={this.handleInput} placeholder="Any other notes" />
 
                     <div className={imageSelectionClass()}>
                         <h3>Select a photo to represent your trip:</h3>

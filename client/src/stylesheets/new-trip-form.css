@@ -1,13 +1,7 @@
-
-.trips-form {
+  .trips-form {
     margin: 0 auto;
     width: 600px;
     padding: 50px 0;
-  }
-
-
-  .trips-form input {
-    margin-bottom: 10px;
   }
 
   .trips-form h2 {
@@ -16,16 +10,6 @@
     text-shadow: 1px 1px 10px #000;
     margin-bottom: 20px;
   }
-
-  .trips-form input {
-    font-size: 20px;
-    padding: 10px;
-    background: rgba(255,255,255,0.5);
-    border: 0;
-    width: 400px;
-  }
-
-
 
 input[type=radio] {
     display:none;
@@ -48,22 +32,21 @@ input[type=radio] {
 
     input[type=radio]:checked + label
     {
-    border-color: red;
-    border-style: solid;
-    height: 100px;
-    width: 150px;
-    display:inline-block;
-    padding: 0 0 0 0px;
-    background-size: cover;
-    background-position: center;
-    margin: 15px 15px 0 0;
-    opacity: 1;
+        border-color: rgb(125, 86, 66);
+        border-style: solid;
+        height: 100px;
+        width: 150px;
+        display:inline-block;
+        padding: 0 0 0 0px;
+        background-size: cover;
+        background-position: center;
+        margin: 15px 15px 0 0;
+        opacity: 1;
     }
 
     .extra-fields {
       max-height: 0px;
       opacity: 0;
-      overflow: hidden;
       transition: all 1s;
     }
 
@@ -81,11 +64,4 @@ input[type=radio] {
      .photo-expanded {
       max-height: 350px;
       opacity: 1;
-    }
-
-    .trips-form input[type=submit]{
-    background: #fff;
-    width: 100px;
-    margin-top: 15px;
-    border: 1px solid #ba1766
     }
