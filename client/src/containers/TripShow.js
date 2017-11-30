@@ -14,7 +14,7 @@ class TripsShow extends Component {
 
     render(){
 
-        const style = { backgroundImage: `url(${this.props.trip.image})` }
+        const style = { backgroundImage: `url(${this.props.trip.image_regular})` }
         const mapCoordinates = [{
                 title: this.props.trip.location,
                 position: {
@@ -30,35 +30,52 @@ class TripsShow extends Component {
 
             </div>
 
+
+
+
             <div className="trips-body">
+
+
+
+
+            <ReactGoogleMapLoader
+            params={{
+                key: GoogleMapsKey(),
+                libraries: "places,geometry",
+            }}
+            render={googleMaps =>
+                googleMaps && (
+                <div className="trip-show-map">
+                        <ReactGoogleMap
+                        googleMaps={googleMaps}
+                        autoFitBounds={false}
+                        coordinates={mapCoordinates}
+                        center={mapCoordinates[0].position}
+                        zoom={4}
+
+                        />
+                </div>
+                )}
+             />
+
+
+
+            <div className="trips-show-wrapper">
+                <div className="trip-show-content">
                     <h2>{this.props.trip.location} <span className="trip-show-date">{this.props.trip.date}</span></h2>
                     <div className="trip-notes">
                     {this.props.trip.notes}
                     </div>
                     <ActivityList activities={this.props.trip.activities} />
                     <NewActivity tripId={this.props.trip.id} />
-
-                    <ReactGoogleMapLoader
-                    params={{
-                        key: GoogleMapsKey(),
-                        libraries: "places,geometry",
-                    }}
-                    render={googleMaps =>
-                        googleMaps && (
-                        <div className="trip-show-map">
-                                <ReactGoogleMap
-                                googleMaps={googleMaps}
-                                autoFitBounds={false}
-                                coordinates={mapCoordinates}
-                                center={mapCoordinates[0].position}
-                                zoom={4}
-
-                                />
-                        </div>
-                        )}
-                     />
-
+                </div>
             </div>
+            </div>
+
+
+
+
+
         </div>
 
 
