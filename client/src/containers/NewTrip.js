@@ -61,6 +61,18 @@ class NewTrip extends Component {
         })
     }
 
+    cancelForm = () => {
+        this.setState({
+            location: '',
+            date: '',
+            image: '',
+            notes: '',
+            photoOptions: [],
+            selectedPhoto: null,
+            expanded: false
+        })
+    }
+
     handleSubmit = (event) => {
         event.preventDefault()
 
@@ -121,9 +133,12 @@ class NewTrip extends Component {
                         {images}
                     </div>
 
+
                     <input type="submit" />
 
-
+                    <div className="cancel-button" onClick={this.cancelForm}>
+                        Cancel
+                    </div>
 
 
                 </div>
