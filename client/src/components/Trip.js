@@ -13,7 +13,7 @@ const Trip = (props) => {
         }
     }
 
-    const style = { backgroundImage: `url(${props.trip.image})` }
+    const style = { backgroundImage: `url(${props.trip.image_small})` }
 
     return (
         <Link key={props.trip.id} to={`/trips/${props.trip.id}`}>
