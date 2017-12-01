@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import { deleteTrip } from '../actions/tripActions'
+import { Redirect } from 'react-router-dom'
+
 
 import ActivityList from '../components/ActivityList'
 import NewActivity from './NewActivity'
@@ -14,7 +18,24 @@ import '../stylesheets/activity.css';
 
 
 class TripsShow extends Component {
+
+    constructor(){
+        super()
+
+    }
+
+    handleDeleteTrip = () => {
+        this.props.deleteTrip(this.props.trip.id)
+    }
+
     render(){
+
+        if(this.props.deleted === true){
+            return (
+                <Redirect to="/trips" />
+            )
+        }
+
         const style = { backgroundImage: `url(${this.props.trip.image_regular})` }
         const mapCoordinates = [{
                 title: this.props.trip.location,
@@ -51,6 +72,7 @@ class TripsShow extends Component {
                         <NewActivity tripId={this.props.trip.id} />
                     </div>
 
+                    <div className="delete-trip" onClick={this.handleDeleteTrip}>Delete This Trip</div>
                 </div>
             </div>
 
@@ -59,12 +81,20 @@ class TripsShow extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+
     const trip = state.trips.find(trip => trip.id == ownProps.match.params.id)
+
     if(trip){
         return { trip }
     } else {
-        return { trip: {} }
+        return {
+            trip: {},
+            deleted: true }
     }
 }
 
-export default connect(mapStateToProps, null)(TripsShow)
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({deleteTrip: deleteTrip}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TripsShow)
