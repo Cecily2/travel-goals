@@ -5,7 +5,7 @@ function UserReducer(state = initialUserState(), action){
         case 'SUCCESS':
             return {
                 ...state,
-                loggedIn: !!localStorage.jwt,
+                session: true,
                 id: action.payload.id,
                 email: action.payload.email,
                 name: action.payload.name
