@@ -31,3 +31,16 @@
   .activity-form {
       max-width: 350px;
   }
+
+
+
+  .delete-activity {
+    display: none;
+  }
+  .activity:hover .delete-activity {
+    display: inline-block;
+    font-size: 11px;
+    color: rgb(217, 127, 127);
+    cursor: pointer;
+    border-radius: 2px;
+  }

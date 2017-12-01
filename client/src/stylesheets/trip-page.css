@@ -26,6 +26,15 @@
     margin-bottom: 15px;
   }
 
+  .delete-trip {
+    float: right;
+    display: inline-block;
+    font-size: 12px;
+    color: rgb(217, 127, 127);
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
   @media(min-width: 700px) {
     .trip-show-content {
       margin-right: 250px;
