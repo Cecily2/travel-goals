@@ -13,6 +13,15 @@ class ActivityApi {
             }).then(response => response.json())
         }
 
+        static deleteActivity(id) {
+            console.log("Hi from the activity api")
+            return fetch(`/api/activities/${id}`,
+            {
+                method: 'DELETE',
+                headers: { 'Authorization': localStorage.jwt }
+            }).then(response => response.json())
+        }
+
 }
 
 export default ActivityApi
