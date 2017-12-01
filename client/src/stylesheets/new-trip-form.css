@@ -64,6 +64,11 @@ input[type=radio] {
       transition: all .5s;
     }
 
+    .photo-options h3 {
+        font-family: "Amatic SC"
+;       text-shadow: none;
+    }
+
      .photo-expanded {
       max-height: 350px;
       opacity: 1;
