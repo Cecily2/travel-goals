@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { deleteTrip } from '../actions/tripActions'
+import { deleteActivity } from '../actions/activityActions'
 import { Redirect } from 'react-router-dom'
 
 
@@ -68,7 +69,7 @@ class TripsShow extends Component {
                     <div className="trip-show-content">
                         <h2>{this.props.trip.location} <span className="trip-show-date">{this.props.trip.date}</span></h2>
                         <div className="trip-notes">{this.props.trip.notes}</div>
-                        <ActivityList activities={this.props.trip.activities} />
+                        <ActivityList activities={this.props.trip.activities} deleteActivity={this.props.deleteActivity} />
                         <NewActivity tripId={this.props.trip.id} />
                     </div>
 
@@ -94,7 +95,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({deleteTrip: deleteTrip}, dispatch)
+    return bindActionCreators({deleteTrip: deleteTrip, deleteActivity: deleteActivity}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TripsShow)
