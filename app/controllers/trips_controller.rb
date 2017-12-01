@@ -14,6 +14,14 @@ class TripsController < ApplicationController
         render json: trip
     end
 
+    def destroy
+        decoded_token = JsonWebToken.decode(request.headers['Authorization'])
+        user = User.find(decoded_token[:user_id])
+        trip = Trip.find(params[:id])
+        trip.destroy
+        render json: { success: true }
+    end
+
 
     private
 
