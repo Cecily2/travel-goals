@@ -25,3 +25,16 @@ export function createTrip(details) {
             })
     }
 }
+
+
+export function deleteTrip(id) {
+    return function(dispatch) {
+        return TripApi.deleteTrip(id)
+            .then(response => {
+                    dispatch({
+                        type: 'DELETE_TRIP',
+                        payload: id
+                    })
+            })
+    }
+}
