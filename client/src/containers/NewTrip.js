@@ -100,7 +100,6 @@ class NewTrip extends Component {
 
 
     render(){
-
         const images = this.state.photoOptions.map((photo, index) => {
             const style = { backgroundImage: `url(${photo.links.thumb})` }
             return (
@@ -120,31 +119,22 @@ class NewTrip extends Component {
         }
 
         return (
-            <form className='trips-form' onSubmit={this.handleSubmit}>
-                <h2>Where would you like to go?</h2>
-                <input type="text" name="location" value={this.state.location} onChange={this.handleInput} onClick={this.onLocationClick} onBlur={this.onLocationBlur} placeholder="Location" />
-
-                <div className={extraFieldsClass()}>
-                    <input type="text" name="date" value={this.state.date} onChange={this.handleInput} placeholder="Approximate date (optional)" />
-                    <textarea type="text" name="notes" value={this.state.notes} onChange={this.handleInput} placeholder="Any other notes" />
-
-                    <div className={imageSelectionClass()}>
-                        <h3>Select a photo to represent your trip:</h3>
-                        {images}
+            <div className="trips-header">
+                <form className='trips-form' onSubmit={this.handleSubmit}>
+                    <h2>Where would you like to go?</h2>
+                    <input type="text" name="location" value={this.state.location} onChange={this.handleInput} onClick={this.onLocationClick} onBlur={this.onLocationBlur} placeholder="Location" />
+                    <div className={extraFieldsClass()}>
+                        <input type="text" name="date" value={this.state.date} onChange={this.handleInput} placeholder="Approximate date (optional)" />
+                        <textarea type="text" name="notes" value={this.state.notes} onChange={this.handleInput} placeholder="Any other notes" />
+                        <div className={imageSelectionClass()}>
+                            <h3>Select a photo to represent your trip:</h3>
+                            {images}
+                        </div>
+                        <input type="submit" />
+                        <div className="cancel-button" onClick={this.cancelForm}>Cancel</div>
                     </div>
-
-
-                    <input type="submit" />
-
-                    <div className="cancel-button" onClick={this.cancelForm}>
-                        Cancel
-                    </div>
-
-
-                </div>
-
-            </form>
-
+                </form>
+            </div>
         )
     }
 }

@@ -30,7 +30,6 @@ class NewActivity extends Component {
             description: ''
         })
         this.buttonDOM.blur()
-
     }
 
     render(){
