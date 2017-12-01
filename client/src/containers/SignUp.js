@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { signUp } from '../actions/userActions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import { Redirect } from 'react-router-dom';
 
 
 class SignUp extends Component {
@@ -14,7 +15,6 @@ class SignUp extends Component {
             email: '',
             password: '',
         }
-        // add form errors to state?
     }
 
     handleInput = (event) => {
@@ -30,6 +30,12 @@ class SignUp extends Component {
     }
 
     render(){
+        if(this.props.loggedIn){
+            return (
+                <Redirect to="/trips" />
+            )
+        }
+
         return (
             <div className="home-background">
             <div className="home">
@@ -57,14 +63,10 @@ class SignUp extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return { user: state.user }
-}
-
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({signUp: signUp}, dispatch)
 }
 
 export default withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(SignUp)
+    connect(null, mapDispatchToProps)(SignUp)
 )

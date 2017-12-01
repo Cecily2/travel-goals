@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
-const Home = () => {
+const Home = (props) => {
+
+    if(props.loggedIn){
+        return(
+            <Redirect to="/trips" />
+        )
+    }
+
     return (
         <div className="home-background">
             <div className="home">

@@ -3,6 +3,8 @@ import { bindActionCreators } from 'redux';
 import { logIn } from '../actions/userActions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import { Redirect } from 'react-router-dom';
+
 
 class LogIn extends Component {
 
@@ -27,6 +29,12 @@ class LogIn extends Component {
     }
 
     render(){
+        if(this.props.loggedIn){
+            return (
+                <Redirect to="/trips" />
+            )
+        }
+
         return (
             <div className="home-background">
             <div className="home">
