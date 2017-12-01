@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     post 'authenticate', to: 'authentication#authenticate'
 
-    resources :trips, only: [:index, :show, :create]
+    resources :trips, only: [:index, :show, :create, :destroy]
     resources :activities, only: [:create, :index]
   end
 
