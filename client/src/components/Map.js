@@ -4,13 +4,9 @@ import ReactGoogleMap from "react-google-map"
 import GoogleMapsKey from "../googleMapsKey.js"
 import '../stylesheets/map.css';
 
-export default class MapContainer extends React.Component {
-
-    render(){
-
+const Map = (props) => {
         const mapCoordinates = () => {
-            return this.props.trips.map((trip) => {
-
+            return props.trips.map((trip) => {
                 return {
                     title: trip.location,
                     position: {
@@ -35,14 +31,11 @@ export default class MapContainer extends React.Component {
                                         infoWindow.open(map, marker)
                                     })
                                 } // end of onLoaded
-                }
-
-            })
+                    }
+                }) // end of map
         }
 
-
         return(
-
             <ReactGoogleMapLoader
             params={{
                 key: GoogleMapsKey(),
@@ -60,9 +53,9 @@ export default class MapContainer extends React.Component {
                     </div>
                 </div>
                 )}
-        />
-
+            />
         )
-    }
 
 }
+
+export default Map
