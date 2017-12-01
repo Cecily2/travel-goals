@@ -32,8 +32,17 @@ class TripApi {
                     'Content-Type': 'application/json',
                     'Authorization': localStorage.jwt },
                 body: JSON.stringify(tripObject)
+            })
+        }
+
+        static deleteTrip(id) {
+            return fetch(`/api/trips/${id}`,
+            {
+                method: 'DELETE',
+                headers: { 'Authorization': localStorage.jwt }
             }).then(response => response.json())
         }
+
 
 }
 
