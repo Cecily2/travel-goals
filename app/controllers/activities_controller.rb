@@ -12,6 +12,15 @@ class ActivitiesController < ApplicationController
     end
 
 
+    def destroy
+        decoded_token = JsonWebToken.decode(request.headers['Authorization'])
+        user = User.find(decoded_token[:user_id])
+        activity = Activity.find(params[:id])
+        activity.destroy
+        render json: { success: true }
+    end
+
+
     private
 
     def activity_params
