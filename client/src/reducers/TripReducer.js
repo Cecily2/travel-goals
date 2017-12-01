@@ -5,6 +5,11 @@ function TripReducer(state = [], action){
         case 'ADD_TRIP':
             const trip = {...action.payload, activities: []}
             return state.concat(trip)
+
+        case 'DELETE_TRIP':
+            const trips = state.filter(trip => trip.id !== action.payload)
+            return trips
+
         case 'ADD_ACTIVITY':
             return state.map(trip => trip.id === action.payload.trip_id ?
                 { ...trip, activities: trip.activities.concat(action.payload) } :
