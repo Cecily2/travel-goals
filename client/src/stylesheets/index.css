@@ -23,7 +23,7 @@ a:hover {
 
 /* Input fields */
 
-  input, textarea {
+  input, textarea, .home-button {
     display: block;
     margin: 12px 0;
     font-size: 15px;
@@ -39,7 +39,7 @@ a:hover {
     border: 1px solid rgb(203, 177, 163);
   }
 
-  input[type=submit]{
+  input[type=submit], .home-button {
     display: inline-block;
     width: 100px;
     background: linear-gradient(#624b3b, #2b2b2b);
@@ -48,8 +48,16 @@ a:hover {
     border: none;
   }
 
-  input[type=submit]:hover{
+  input[type=submit]:hover, .home-button:hover {
     background: linear-gradient(#886752, #424242);
+  }
+
+  a.home-button {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 15px;
+    width: 75px;
   }
 
 h2 {
@@ -58,8 +66,11 @@ h2 {
   color: #2b2b2b;
   text-shadow: 3px 2px 0px rgba(0,0,0,0.1);
   font-size: 55px;
+  line-height: 45px;
   margin-bottom: 15px;
 }
+
+
 
 h3 {
   font-family: 'Oleo Script', Helvetica, sans-serif;
@@ -101,14 +112,6 @@ h3 {
   padding: 30px;
   background: rgba(255,255,255,0.7);
   border-radius: 10px;
-}
-
-.home-button {
-  display: inline-block;
-  margin: 5px;
-  padding: 10px;
-  background:rgb(137, 7, 70);
-  color: #fff;
 }
 
 p {
