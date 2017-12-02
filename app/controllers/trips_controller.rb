@@ -8,18 +8,28 @@ class TripsController < ApplicationController
 
     def create
         decoded_token = JsonWebToken.decode(request.headers['Authorization'])
-        user = User.find(decoded_token[:user_id])
-        trip = user.trips.build(trip_params)
-        trip.save
-        render json: trip
+        if user = User.find(decoded_token[:user_id])
+            trip = user.trips.build(trip_params)
+            if trip.save
+                render json: trip
+            else
+                render json: { message: trip.errors }, status: 400
+            end
+        else
+            render json: { message: "User authentication failed" }
+        end
     end
 
     def destroy
         decoded_token = JsonWebToken.decode(request.headers['Authorization'])
         user = User.find(decoded_token[:user_id])
         trip = Trip.find(params[:id])
-        trip.destroy
-        render json: { success: true }
+        if trip.user === user
+            trip.destroy
+            render status: 204
+        else
+            render json: { message: "Unable to delete trip" }, status: 400
+        end
     end
 
 
