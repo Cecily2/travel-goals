@@ -63,10 +63,14 @@ class SignUp extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return { loggedIn: state.user.session }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({signUp: signUp}, dispatch)
 }
 
 export default withRouter(
-    connect(null, mapDispatchToProps)(SignUp)
+    connect(mapStateToProps, mapDispatchToProps)(SignUp)
 )
