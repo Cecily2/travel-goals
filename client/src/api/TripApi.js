@@ -40,7 +40,7 @@ class TripApi {
             {
                 method: 'DELETE',
                 headers: { 'Authorization': localStorage.jwt }
-            }).then(response => response.json())
+            })
         }
 
 
