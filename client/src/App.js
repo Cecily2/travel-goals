@@ -31,8 +31,8 @@ class App extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" render={(props) => (<Home {...props} loggedIn={this.props.loggedIn} />)} />
-          <Route exact path="/signup" render={(props) => (<SignUp {...props} loggedIn={this.props.loggedIn} />)} />
-          <Route exact path="/login" render={(props) => (<LogIn {...props} loggedIn={this.props.loggedIn} />)} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/login" component={LogIn} />
           <Route exact path="/logout" component={LogOut} />
           <Route exact path="/trips" render={(props) => (<TripIndex {...props} trips={this.props.trips} /> )} />
           <Route path="/trips/:id" component={TripShow} />
