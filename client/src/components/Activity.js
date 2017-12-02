@@ -1,5 +1,4 @@
 import React from 'react';
-import arrow from '../images/arrow.png'
 const Activity = (props) => {
 
     const handleDeleteActivity = () => {
@@ -8,7 +7,6 @@ const Activity = (props) => {
 
     return (
             <div className="activity">
-                <img src={arrow} />
                 <div className="activity-content">
                     <h4>{props.activity.name} <span className="delete-activity" onClick={handleDeleteActivity}>Delete</span></h4>
                     <div className="description">{props.activity.description}</div>
