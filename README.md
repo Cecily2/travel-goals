@@ -1,24 +1,19 @@
-# README
+# Travel Goals
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+Travel Goals is a web app for users to track the places they would like to travel, and associate activities with certain areas.
 
-* Ruby version
+The app uses a Rails API backend with a React/Redux frontend; the React code can be found in the "client" folder.
 
-* System dependencies
+## Installation
 
-* Configuration
+Fork and clone the repsoitory. Run `bundle install` in the terminal. Create the file /client/src/googleMapsKey.js, and `export default` a function that returns the value of your google maps key.
 
-* Database creation
+## Contributing
 
-* Database initialization
+Bug reports are welcome through GitHub at https://github.com/Cecily2/travel-goals
 
-* How to run the test suite
+## License
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is licenced under the MIT Licence.
