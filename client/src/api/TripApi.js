@@ -32,7 +32,7 @@ class TripApi {
                     'Content-Type': 'application/json',
                     'Authorization': localStorage.jwt },
                 body: JSON.stringify(tripObject)
-            })
+            }).then(response => response.json())
         }
 
         static deleteTrip(id) {
