@@ -1,4 +1,3 @@
-require 'pry'
 class TripsController < ApplicationController
     def index
         decoded_token = JsonWebToken.decode(request.headers['Authorization'])
