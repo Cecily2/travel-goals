@@ -22,16 +22,21 @@ class TripsShow extends Component {
 
     constructor(){
         super()
-
+        this.state = {
+            deleted: false
+        }
     }
 
     handleDeleteTrip = () => {
         this.props.deleteTrip(this.props.trip.id)
+        this.setState({
+            deleted: true
+        })
     }
 
     render(){
 
-        if(this.props.deleted === true){
+        if(this.state.deleted === true){
             return (
                 <Redirect to="/trips" />
             )
@@ -89,8 +94,8 @@ const mapStateToProps = (state, ownProps) => {
         return { trip }
     } else {
         return {
-            trip: {},
-            deleted: true }
+            trip: {}
+        }
     }
 }
 
