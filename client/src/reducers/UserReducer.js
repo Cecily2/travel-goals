@@ -14,7 +14,6 @@ function UserReducer(state = initialUserState(), action){
             return { ...state, error: action.payload}
 
         case 'LOG_OUT':
-            // redirect the user here??
             return !!localStorage.jwt
 
         default:
