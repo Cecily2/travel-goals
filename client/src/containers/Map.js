@@ -4,9 +4,33 @@ import ReactGoogleMap from "react-google-map"
 import GoogleMapsKey from "../googleMapsKey.js"
 import '../stylesheets/map.css';
 
-const Map = (props) => {
+import { bindActionCreators } from 'redux';
+import { getTrips } from '../actions/tripActions'
+import { connect } from 'react-redux'
+
+
+class Map extends React.Component {
+
+    componentDidMount(){
+        if(this.props.trips.length === 0){
+          this.props.getTrips()
+        }
+      }
+
+      render(){
+
+        if(this.props.trips.length === 0) {
+            return (
+                <div className="map-page">
+                    <div className="map-no-trips">
+                        <h2>Add some trips to view your map</h2>
+                    </div>
+                </div>
+            )
+        }
+
         const mapCoordinates = () => {
-            return props.trips.map((trip) => {
+            return this.props.trips.map((trip) => {
                 return {
                     title: trip.location,
                     position: {
@@ -56,6 +80,16 @@ const Map = (props) => {
             />
         )
 
+      }
+
 }
 
-export default Map
+const mapStateToProps = (state) => {
+    return { trips: state.trips }
+    }
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({getTrips: getTrips}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Map)
