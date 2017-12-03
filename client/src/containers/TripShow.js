@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
+import { getTrips } from '../actions/tripActions'
 import { deleteTrip } from '../actions/tripActions'
 import { deleteActivity } from '../actions/activityActions'
 import { Redirect } from 'react-router-dom'
@@ -26,6 +27,12 @@ class TripsShow extends Component {
             deleted: false
         }
     }
+
+    componentDidMount(){
+        if(this.props.trips.length === 0){
+          this.props.getTrips()
+        }
+      }
 
     handleDeleteTrip = () => {
         this.props.deleteTrip(this.props.trip.id)
@@ -91,16 +98,17 @@ const mapStateToProps = (state, ownProps) => {
     const trip = state.trips.find(trip => trip.id == ownProps.match.params.id)
 
     if(trip){
-        return { trip }
+        return { trips: state.trips, trip: trip }
     } else {
         return {
+            trips: state.trips,
             trip: {}
         }
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({deleteTrip: deleteTrip, deleteActivity: deleteActivity}, dispatch)
+    return bindActionCreators({getTrips: getTrips, deleteTrip: deleteTrip, deleteActivity: deleteActivity}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TripsShow)
