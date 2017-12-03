@@ -97,8 +97,6 @@ class NewTrip extends Component {
 
     }
 
-
-
     render(){
         const images = this.state.photoOptions.map((photo, index) => {
             const style = { backgroundImage: `url(${photo.links.thumb})` }
