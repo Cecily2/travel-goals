@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { logIn } from '../actions/userActions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { Redirect } from 'react-router-dom';
+import RedirectContainer from '../containers/RedirectContainer'
 
 
 class LogIn extends Component {
@@ -29,36 +29,24 @@ class LogIn extends Component {
     }
 
     render(){
-        if(this.props.loggedIn){
-            return (
-                <Redirect to="/trips" />
-            )
-        }
-
         return (
-            <div className="home-background">
-            <div className="home">
-            <form className="login" onSubmit={this.handleSubmit}>
-                <p>
-                    Email
-                    <input type="text" name="email" value={this.state.email} onChange={this.handleInput} />
-                </p>
-                <p>
-                    Password
-                    <input type="password" name="password" value={this.state.password} onChange={this.handleInput} />
-                </p>
-                <p>
-                    <input type="submit" />
-                </p>
-            </form>
-            </div>
-            </div>
+            <RedirectContainer>
+                <form className="login" onSubmit={this.handleSubmit}>
+                    <p>
+                        Email
+                        <input type="text" name="email" value={this.state.email} onChange={this.handleInput} />
+                    </p>
+                    <p>
+                        Password
+                        <input type="password" name="password" value={this.state.password} onChange={this.handleInput} />
+                    </p>
+                    <p>
+                        <input type="submit" />
+                    </p>
+                </form>
+            </RedirectContainer>
         )
     }
-}
-
-const mapStateToProps = (state) => {
-    return { loggedIn: state.user.session }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -66,5 +54,5 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(LogIn)
+    connect(null, mapDispatchToProps)(LogIn)
 )
