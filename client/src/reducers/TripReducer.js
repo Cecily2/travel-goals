@@ -30,6 +30,8 @@ function TripReducer(state = [], action){
             }
             return filterOut(state)(action.payload.tripId, action.payload.id)
 
+        case 'LOG_OUT':
+            return []
 
         default:
             return state
