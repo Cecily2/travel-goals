@@ -9,7 +9,11 @@ class NewTrip extends Component {
 
     constructor(props) {
         super(props)
-        this.state = {
+        this.state = this.defaultState()
+    }
+
+    defaultState = () => {
+        return {
             location: '',
             date: '',
             image: '',
@@ -37,8 +41,6 @@ class NewTrip extends Component {
         if(this.state.location !== ""){
             UnsplashApi.searchPhotos(this.state.location)
             .then(response => {
-                console.log("onLocationBlur:")
-                console.log(response)
                 this.setState({
                     photoOptions: response.results.map((photo) => {
                         return {
@@ -52,49 +54,26 @@ class NewTrip extends Component {
                 })
             })
         }
-
     }
 
     photoChoiceChange = (event) => {
-        this.setState({
-            selectedPhoto: event.target.value
-        })
+        this.setState({ selectedPhoto: event.target.value })
     }
 
     cancelForm = () => {
-        this.setState({
-            location: '',
-            date: '',
-            image: '',
-            notes: '',
-            photoOptions: [],
-            selectedPhoto: null,
-            expanded: false
-        })
+        this.setState(this.defaultState())
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-
         const trip = {
             location: this.state.location,
             date: this.state.date,
             image: this.state.photoOptions[this.state.selectedPhoto],
             notes: this.state.notes
         }
-
         this.props.createTrip(trip)
-
-        this.setState({
-            location: '',
-            date: '',
-            image: '',
-            notes: '',
-            photoOptions: [],
-            selectedPhoto: null,
-            expanded: false
-        })
-
+        this.setState(this.defaultState())
     }
 
     render(){
