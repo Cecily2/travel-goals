@@ -4,7 +4,6 @@ import ReactGoogleMap from "react-google-map"
 import GoogleMapsKey from "../googleMapsKey.js"
 import '../stylesheets/map.css';
 
-import { bindActionCreators } from 'redux';
 import { getTrips } from '../actions/tripActions'
 import { connect } from 'react-redux'
 
@@ -88,8 +87,5 @@ const mapStateToProps = (state) => {
     return { trips: state.trips }
     }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({getTrips: getTrips}, dispatch)
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Map)
+export default connect(mapStateToProps, {getTrips})(Map)

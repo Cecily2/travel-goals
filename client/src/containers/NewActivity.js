@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createActivity } from '../actions/activityActions'
 
@@ -29,7 +28,6 @@ class NewActivity extends Component {
             link: '',
             description: ''
         })
-        this.buttonDOM.blur()
     }
 
     render(){
@@ -40,7 +38,7 @@ class NewActivity extends Component {
                     <input type="text" name="name" value={this.state.name} onChange={this.handleInput} placeholder="Name" />
                     <input type="text" name="link" value={this.state.link} onChange={this.handleInput} placeholder="Link" />
                     <input type="text" name="description" value={this.state.description} onChange={this.handleInput} placeholder="Description" />
-                    <input type="submit" ref={(buttonDOM) => {this.buttonDOM = buttonDOM }} />
+                    <input type="submit" />
                 </form>
             </div>
 
@@ -48,8 +46,4 @@ class NewActivity extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({createActivity: createActivity}, dispatch)
-}
-
-export default connect(null, mapDispatchToProps)(NewActivity)
+export default connect(null, {createActivity})(NewActivity)

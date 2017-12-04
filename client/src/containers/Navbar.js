@@ -24,7 +24,7 @@ class Navbar extends Component {
                     Travel Goals
                 </div>
                 <div className="navbar-right">
-                {links()}
+                   {links()}
                 </div>
             </div>
         )

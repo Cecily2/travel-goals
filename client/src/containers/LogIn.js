@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { logIn } from '../actions/userActions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
@@ -49,10 +48,6 @@ class LogIn extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({logIn: logIn}, dispatch)
-}
-
 export default withRouter(
-    connect(null, mapDispatchToProps)(LogIn)
+    connect(null, {logIn})(LogIn)
 )

@@ -4,7 +4,6 @@ import NewTrip from './NewTrip'
 import Trip from '../components/Trip'
 import TripList from '../components/TripList'
 
-import { bindActionCreators } from 'redux';
 import { getTrips } from '../actions/tripActions'
 import { connect } from 'react-redux'
 
@@ -41,8 +40,4 @@ const mapStateToProps = (state, ownProps) => {
     return { trips: state.trips }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({getTrips: getTrips}, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TripIndex)
+export default connect(mapStateToProps, {getTrips})(TripIndex)

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createTrip } from '../actions/tripActions'
 import UnsplashApi from '../api/UnsplashApi'
@@ -116,8 +115,5 @@ class NewTrip extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({createTrip: createTrip}, dispatch)
-}
 
-export default connect(null, mapDispatchToProps)(NewTrip)
+export default connect(null, {createTrip})(NewTrip)

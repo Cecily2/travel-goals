@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux';
 import { getTrips } from '../actions/tripActions'
 import { deleteTrip } from '../actions/tripActions'
 import { deleteActivity } from '../actions/activityActions'
@@ -107,8 +106,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({getTrips: getTrips, deleteTrip: deleteTrip, deleteActivity: deleteActivity}, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TripsShow)
+export default connect(mapStateToProps, {getTrips, deleteTrip, deleteActivity})(TripsShow)

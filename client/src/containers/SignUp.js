@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { signUp } from '../actions/userActions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
@@ -55,10 +54,6 @@ class SignUp extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({signUp: signUp}, dispatch)
-}
-
 export default withRouter(
-    connect(null, mapDispatchToProps)(SignUp)
+    connect(null, {signUp})(SignUp)
 )
