@@ -1,6 +1,6 @@
   .trips-form {
     margin: 0 auto;
-    width: 500px;
+    width: 95%;
     padding: 15px 0;
   }
 
@@ -54,7 +54,7 @@ input[type=radio] {
     }
 
      .expanded {
-      max-height: 1000px;
+      max-height: 2000px;
       opacity: 1;
     }
 
@@ -70,7 +70,7 @@ input[type=radio] {
     }
 
      .photo-expanded {
-      max-height: 350px;
+      max-height: 1000px;
       opacity: 1;
     }
 
@@ -90,4 +90,12 @@ input[type=radio] {
 
     .cancel-button:hover {
       background: #fff;
+  }
+
+  @media (min-width: 525px) {
+    .trips-form {
+      margin: 0 auto;
+      width: 500px;
+      padding: 15px 0;
+    }
   }

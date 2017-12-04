@@ -25,6 +25,7 @@ a:hover {
 
   input, textarea, .home-button {
     display: block;
+    box-sizing: border-box;
     margin: 12px 0;
     font-size: 15px;
     padding: 10px;
