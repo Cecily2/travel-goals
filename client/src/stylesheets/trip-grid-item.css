@@ -44,13 +44,12 @@
 
   .activity-count {
     display: inline-block;
-    background: url("../images/tagbg.svg");
+    background: url("../images/tagbg.png");
     background-repeat: no-repeat;
-    background-size: 150%;
     background-position: right;
     text-shadow: none;
     color: #000;
-    padding: 4px 20px 4px 6px;
+    padding: 3px 38px 3px 6px;
     font-size: 14px;
   }
 
