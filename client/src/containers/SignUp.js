@@ -31,6 +31,7 @@ class SignUp extends Component {
 
         return (
             <RedirectContainer>
+                <h2>Sign Up</h2>
                 <form className="signup" onSubmit={this.handleSubmit}>
                     <p>
                         Username
@@ -44,9 +45,7 @@ class SignUp extends Component {
                         Password
                         <input type="password" name="password" value={this.state.password} onChange={this.handleInput} />
                     </p>
-                    <p>
                         <input type="submit" />
-                    </p>
 
                 </form>
             </RedirectContainer>

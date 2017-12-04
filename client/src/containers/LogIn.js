@@ -30,6 +30,7 @@ class LogIn extends Component {
     render(){
         return (
             <RedirectContainer>
+                <h2>Login</h2>
                 <form className="login" onSubmit={this.handleSubmit}>
                     <p>
                         Email
@@ -39,9 +40,7 @@ class LogIn extends Component {
                         Password
                         <input type="password" name="password" value={this.state.password} onChange={this.handleInput} />
                     </p>
-                    <p>
                         <input type="submit" />
-                    </p>
                 </form>
             </RedirectContainer>
         )
