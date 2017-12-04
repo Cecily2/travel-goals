@@ -10,8 +10,6 @@ class UnsplashApi {
                 mode: "cors"
             }).then(response => response.json())
             .then(response => {
-                console.log("UnsplashApi.js - Success:")
-                console.log(response)
                 return response
             })
             .catch(error => console.log("Error: ", error))

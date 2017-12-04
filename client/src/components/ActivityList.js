@@ -1,7 +1,6 @@
 import React from 'react';
 import Activity from './Activity'
 
-
 const ActivityList = (props) => {
     if(!!props.activities && props.activities.length !== 0) {
         return (
