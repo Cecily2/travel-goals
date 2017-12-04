@@ -2,7 +2,7 @@
 
 ## Description
 
-Travel Goals is a web app for users to track the places they would like to travel, and associate activities with certain areas.
+Travel Goals is a web app for users to track the places they would like to travel, and associate activities with certain places. It incorporates the Unsplash API to find photos for locations and the Google Maps API to include maps of locations.
 
 The app uses a Rails API backend with a React/Redux frontend; the React code can be found in the "client" folder.
 
