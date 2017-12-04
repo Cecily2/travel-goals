@@ -58,7 +58,7 @@ a:hover {
     text-decoration: none;
     text-align: center;
     margin-right: 15px;
-    width: 75px;
+    width: 100px;
   }
 
 h2 {
@@ -106,18 +106,51 @@ h3 {
 
 
 .home {
-  margin: 0 auto;
+  box-sizing: border-box;
   position: relative;
-  top: 300px;
-  width: 400px;
+  top: 65px;
+  width: 95%;
   padding: 30px;
+  margin: 0 auto;
   background: rgba(255,255,255,0.7);
   border-radius: 10px;
+}
+
+.home input[type=submit] {
+  margin-bottom: 0px;
 }
 
 p {
   margin: 10px 0;
 }
+
+
+@media (min-width: 500px) {
+  .home {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 400px;
+    margin: -100px 0 0 -200px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 10px;
+  }
+}
+
+
+
+@media (min-width: 800px) {
+  .home {
+    width: 550px;
+    padding: 40px;
+    margin: -100px 0 0 -275px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 10px;
+  }
+}
+
+
+
 
 @media (min-width: 900px) {
   .trips-body {
