@@ -28,8 +28,7 @@ class Map extends React.Component {
             )
         }
 
-        const mapCoordinates = () => {
-            return this.props.trips.map((trip) => {
+        const mapCoordinates = this.props.trips.map((trip) => {
                 return {
                     title: trip.location,
                     position: {
@@ -55,8 +54,7 @@ class Map extends React.Component {
                                     })
                                 } // end of onLoaded
                     }
-                }) // end of map
-        }
+                })
 
         return(
             <ReactGoogleMapLoader
@@ -71,7 +69,7 @@ class Map extends React.Component {
                         <ReactGoogleMap
                         googleMaps={googleMaps}
                         autoFitBounds={true}
-                        coordinates={mapCoordinates()}
+                        coordinates={mapCoordinates}
                         />
                     </div>
                 </div>
