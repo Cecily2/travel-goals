@@ -17,18 +17,13 @@ function TripReducer(state = [], action){
             )
 
         case 'DELETE_ACTIVITY':
-            function filterOut (state) {
-                return (tripId, activityId) => {
-                    return state.reduce((state, trip) => {
-                        return state.concat(
-                        (tripId === trip.id) ?
-                            Object.assign({}, trip, {activities: trip.activities.filter((activity) => activity.id !== activityId)}) :
-                            trip
-                        );
-                    }, []);
-                }
-            }
-            return filterOut(state)(action.payload.tripId, action.payload.id)
+            return state.reduce((state, trip) => {
+                return state.concat(
+                (action.payload.tripId === trip.id) ?
+                    Object.assign({}, trip, {activities: trip.activities.filter((activity) => activity.id !== action.payload.id)}) :
+                    trip
+                );
+            }, []);
 
         case 'LOG_OUT':
             return []
