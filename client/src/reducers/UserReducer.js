@@ -1,8 +1,9 @@
 import initialUserState from './initialUserState'
+import * as t from '../actions/actionTypes'
 
 function UserReducer(state = initialUserState(), action){
     switch(action.type) {
-        case 'SUCCESS':
+        case t.SUCCESS:
             return {
                 ...state,
                 session: true,
@@ -10,10 +11,10 @@ function UserReducer(state = initialUserState(), action){
                 email: action.payload.email,
                 name: action.payload.name
             }
-        case 'FAILURE':
+        case t.FAILURE:
             return { ...state, error: action.payload}
 
-        case 'LOG_OUT':
+        case t.LOG_OUT:
             return !!localStorage.jwt
 
         default:

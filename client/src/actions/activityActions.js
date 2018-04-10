@@ -1,13 +1,13 @@
-import fetch from 'isomorphic-fetch';
+import 'isomorphic-fetch';
 import ActivityApi from '../api/ActivityApi'
-
+import * as t from './actionTypes'
 
 export function createActivity(details) {
     return function(dispatch) {
         return ActivityApi.createActivity(details)
             .then(response => {
                     dispatch({
-                        type: 'ADD_ACTIVITY',
+                        type: t.ADD_ACTIVITY,
                         payload: response
                     })
             })
@@ -19,7 +19,7 @@ export function deleteActivity(id, tripId) {
         return ActivityApi.deleteActivity(id)
             .then(response => {
                     dispatch({
-                        type: 'DELETE_ACTIVITY',
+                        type: t.DELETE_ACTIVITY,
                         payload: { id: id, tripId: tripId }
                     })
             })

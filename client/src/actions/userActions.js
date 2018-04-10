@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import UserApi from '../api/UserApi'
+import * as t from './actionTypes'
 
 export function signUp(credentials, history, redirect) {
     return function(dispatch) {
@@ -14,19 +15,18 @@ export function signUp(credentials, history, redirect) {
                     history.push(redirect)
 
                     dispatch({
-                        type: 'SUCCESS',
+                        type: t.SUCCESS,
                         payload: response
                     })
                 } else {
                     dispatch({
-                        type: 'FAILURE',
+                        type: t.FAILURE,
                         payload: response.error
                     })
                 }
             })
     }
 }
-
 
 export function logIn(credentials, history, redirect) {
     return function(dispatch) {
@@ -40,20 +40,18 @@ export function logIn(credentials, history, redirect) {
                     history.push(redirect)
 
                     dispatch({
-                        type: 'SUCCESS',
+                        type: t.SUCCESS,
                         payload: response
                     })
                 } else {
                     dispatch({
-                        type: 'FAILURE',
+                        type: t.FAILURE,
                         payload: response.error
                     })
                 }
             })
     }
 }
-
-
 
 export function logOut() {
     console.log("LOGGING OUT")
